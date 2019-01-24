@@ -1,0 +1,39 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>hello</title> 
+	 </head>
+	<body>
+<header><center>
+Shubham</outline> </center> </header>
+
+<h1> List of Cars </h1>
+<ol>
+<li> Ferrari  </li>
+<li> Porche </li>
+<li> Mitshubishi </li>
+</ol>
+
+<h2> Breed of Dogs </h2>
+<ul>
+<li> German Shepard </li>
+<li> Labror </li>
+<li> Bulldog </li>
+</ul> 
+
+<h3> Paragraph </h3>
+<p> sdfgh dfgh tr gvc ert fx ia arley my <span style = "font-family : arial-black; font-size : 30px;background : green;">killer</span> ghjkkfv bob h gnt tredreg frdrtgtrf gtrthg hbv bhv bgv b.. this is that and that is this. Lorel is a brand bloody big brand. pandey ji will realize later. 
+</p>
+
+<h4> Partition </h4>
+<hr>
+<div>
+<div style = "height: 180px; width : 45%; border : 30px;background:red; border-radius:20px;position:absolute;">
+<center>Everything or nothing..</center>
+</div>
+ 
+<div style = "height : 180px	; width : 45%; 	 : border;background : blue;border-radius:20px; margin-left:50%;">
+<center>Everybody or nobody..</center>
+</div>
+</div>
+<footer> Copyright </footer>

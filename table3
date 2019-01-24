@@ -1,0 +1,42 @@
+ 
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+	<title>TABLE3</title>
+</head>
+<body>
+<table  border="1" width="50%"; cellpadding="5px";>
+	<tr >
+		<td rowspan="3">A</td>
+		<td rowspan="4">B</td>
+		<td rowspan="6">C</td>
+		<td rowspan="12">Z</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr>
+		<td rowspan="3">D</td>
+	</tr>
+	<tr>
+		<td rowspan="4">E</td>
+	</tr>
+	<tr></tr>
+	<tr>
+		<td rowspan="3">F</td>
+		<td rowspan="6">G</td>
+	</tr>
+	<tr></tr>
+	<tr>
+		<td rowspan="4">H</td>
+	</tr>
+	<tr>
+		<td rowspan="3">I</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+</table>
+</body>
+</html>
+
+    
+ 
