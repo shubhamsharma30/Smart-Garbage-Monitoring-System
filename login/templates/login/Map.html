@@ -1,0 +1,128 @@
+{% extends 'login/page.html' %}
+{% block body_block %}
+  <div class="container">
+    <div class="jumbotron">
+
+	<title>design</title
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{
+	box-sizing: border-box;
+
+}
+
+	.welcome {
+		width:80 %;
+		background: lightgrey;
+		padding: 10px;
+		content: inline;
+		color:brown;
+	}
+	
+
+.client {
+ width: 24%;
+  float: left;
+  padding: 5px; 
+margin-top: 20px;
+  
+}
+
+.driver {
+   width: 24%;
+  float: left;
+  padding: 5px;
+margin-left:5px;
+ margin-top: 20px;
+}
+
+.bins {
+   width: 24%;
+  float: left;
+  padding: 5px;
+margin-left:5px;
+  margin-top: 20px;
+}
+
+.see_all {
+ width: 24%;
+  float: left;
+  padding: 5px;
+margin-left:5px;
+  margin-top: 20px;
+}
+
+.footer {
+margin-top:20px;
+}
+
+hr{
+clear:both;
+}
+.big-btn {
+  display: inline-block;
+  text-decoration: none;
+  min-width: 290px;
+  background: #444;
+  color:#fff;
+  padding: 5px 15px 10px;
+  text-align: center;
+  border-radius: 40px;
+  font-size: 30px;
+  font-family: GoldenSans-Bold;
+  border:2px solid transparent;
+  transition: 0.3s ease;
+  margin: auto;
+}
+.big-btn:hover {text-decoration: none;border-color:#53B848;background: #fff;color: #53B848}
+
+@media screen and (max-width: 600px){
+	body{
+		background: grey;
+	}
+} 
+
+</head>
+</style>
+
+<div>
+	<div class="welcome">
+	<h1> Welcome Contractor</h1>
+		<p>Now u can add,remove drivers, clients and bins.<br>Hope you are doing well  </p>
+
+<button	type="button">Click Here</button >
+	</div> 
+
+<div>
+<div class="client">
+<form method="GET" action="{% url 'Driver' %}">
+	<button	type="submit">Register Drivers</button>
+</form>
+</div>
+
+<div class="driver">
+	<form method="GET" action="{% url 'Customer' %}">
+    <button type="submit">Register Customers</button>
+</form>
+
+</div>
+
+<div class="bins">
+<form method="GET" action="{% url 'Trashcan' %}">
+    <button type="submit">Register Bins</button>
+</form>
+</div>
+
+<div class="see_all">
+	<form method="GET" action="{% url 'Map' %}">
+		<button type="submit">See All</button>
+	</form>
+</div>
+<div class="footer">
+<hr
+<p>&copy 2019 Zapbuild Technologies Pvt. Ltd. All Rights Reserved</p>
+</div>
+</div>
+</div>
+		{% endblock %}

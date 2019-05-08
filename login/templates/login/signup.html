@@ -1,0 +1,108 @@
+{% extends 'login/base.html' %}
+{% block body_block %}
+  <div class="container">
+    <div class="jumbotron">
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+
+.container {
+  padding: 16px;
+}
+
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+</style>
+<div>
+
+<form action="/action_page.php" style="border:1px solid #ccc">
+  <div class="container">
+    <h1>Register Bin</h1>
+    <p>Please fill it carefully.</p>
+    <hr>
+
+    <label for="binid"><b>Bin_Id</b></label>
+    <input type="text" placeholder="Enter bin_id" name="binid" required>
+
+    <label for="Client"><b>Client Name</b></label>
+    <input type="text" placeholder="Enter Client Name" name="client" required>
+
+    <label for="driver"><b>Driver Name</b></label>
+    <input type="text" placeholder="Enter Driver Name" name="driver" required>
+
+    <label for="location"><b>Client Address</b></label>
+    <input type="text" placeholder="Enter Client's Address" name="location" required>
+
+
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit" class="signupbtn">Sign Up</button>
+    </div>
+  </div>
+</form>
+</div>
+    </div>
+    {% endblock %}
+

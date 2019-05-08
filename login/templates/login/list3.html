@@ -1,0 +1,29 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Trash Cans </title>
+</head>
+<body>
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<h1>List of all registered Trashcans </h1>
+
+{% for t in alltrash %}
+
+<a href="{{ t.id }}"><span> {{ t.id}}.</span> {{t.T_ID}} </a>
+
+<br><br>
+{% endfor %}
+</table>
+
+</body>
+</html>
+
+

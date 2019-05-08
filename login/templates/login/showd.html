@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  	<meta charset="utf-8">
+<style>
+html {
+	height: 100%;
+}
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+#map-canvas {
+	height: 80%;
+}
+#iw_container .iw_title {
+	font-size: 16px;
+	font-weight: bold;
+}
+.iw_content {
+	padding: 15px 15px 15px 0;
+}
+
+</style>
+</head>
+  <body>
+<!--<div class="jumbotron">-->
+      <div id="map-canvas" class="jumbotron">
+  </div>
+
+
+  <div class="container-fluid">
+
+ 	{% for trash in data %}
+	<h3>Trash Can ID :{{ trash.id }}</h3>
+    <div class="row thm">
+
+      <div class="col-sm-5 text-center"><div class="thumbnail"><a href="#"><iframe width="430" height="280" frameborder="0" src="https://app.ubidots.com/ubi/getchart/Xdu9xxivRQoipfJiwI4dm_LfREs"></iframe><div class="caption"><strong> Trash percent </strong></div></a></div></div>
+      <div class="col-sm-5 text-center"><div class="thumbnail"><a href="#"><iframe width="430" height="280" frameborder="0" src="https://app.ubidots.com/ubi/getchart/l_HpNeX9_cd98iWGGAPI1FA9q3M"></iframe><div class="caption"><strong> Last day record </strong></div></a></div></div>
+
+    </div>
+	{% endfor %}
+  </div>
+
+  <!--<div class="col-sm-4"><iframe src="{% url 'customer' %}"></iframe> </div>-->
+  <!--<div class="col-sm-4"><iframe src="{% url 'driver1' %}"></iframe></div>-->
+  <!--<div class="col-sm-4"><iframe src="{% url 'trash' %}"></iframe></div>-->
+
+  <!--<div class="container-fluid">-->
+
+ 	<!--{% for trash in markersData1 %}-->
+	<!--<h3>Trash Can ID :{{ trash.id }}</h3>-->
+    <!--<div class="row thm">-->
+      <!--<div class="col-sm-6 text-center" id="{{ trash.id }}x"> {{ trash.T_x_c }} </div>-->
+      <!--<div class="col-sm-6 text-center" id="{{ trash.id }}y"> {{ trash.T_y_c }}</div>-->
+    <!--</div>-->
+
+	<!--{% endfor %}-->
+  <!--</div>-->
+<div class ="footer text-center"> Green City 2019 , All rights Reserved </div>
+
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDT79IjIXNg69ChpliTTd3m6_qnTjM8WAQ"></script>
+
+<script>
+var map;
+var infoWindow;
+var markersData1 = " {{ markersData1 }} ";
+//JSON.parse('{ "name":"John", "age":30, "city":"New York"}');
+// markersData variable stores the information necessary to each marker
+var markersData = [
+   {
+      lat: 30.7097739,
+      lng: 76.6858297,
+      name: "Trash 01",
+
+   },
+   {
+      lat: 30.7132329,
+      lng: 76.6279277,
+      name: "Trash 02",
+   },
+   {
+      lat: 30.755587,
+      lng: 76.7999578,
+      name: "Trash 03",
+   }
+];
+
+function initialize() {
+   var mapOptions = {
+      center: new google.maps.LatLng(30.7097739,76.6858297),
+      zoom: 12,
+      mapTypeId: 'roadmap',
+   };
+
+   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+   // a new Info Window is created
+   infoWindow = new google.maps.InfoWindow();
+
+   // Event that closes the Info Window with a click on the map
+   google.maps.event.addListener(map, 'click', function() {
+      infoWindow.close();
+   });
+
+   // Finally displayMarkers() function is called to begin the markers creation
+   displayMarkers();
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+
+
+// This function will iterate over markersData array
+// creating markers with createMarker function
+function displayMarkers(){
+
+   // this variable sets the map bounds according to markers position
+   var bounds = new google.maps.LatLngBounds();
+
+   // for loop traverses markersData array calling createMarker function for each marker
+   for (var i = 0; i < markersData.length; i++){
+
+      var latlng = new google.maps.LatLng(markersData[i].lat,markersData[i].lng );
+      var name = markersData[i].name;
+      createMarker(latlng, name);
+
+      // marker position is added to bounds variable
+      bounds.extend(latlng);
+   }
+
+   // Finally the bounds variable is used to set the map bounds
+   // with fitBounds() function
+   map.fitBounds(bounds);
+}
+
+// This function creates each marker and it sets their Info Window content
+function createMarker(latlng, name, address1, address2, postalCode){
+   var marker = new google.maps.Marker({
+      map: map,
+      position: latlng,
+      title: name
+   });
+
+   // This event expects a click on a marker
+   // When this event is fired the Info Window content is created
+   // and the Info Window is opened.
+   google.maps.event.addListener(marker, 'click', function() {
+
+      // Creating the content to be inserted in the infowindow
+      var iwContent = '<div id="iw_container">' +
+            '<div class="iw_title">' + name + '</div>' +
+         '<div class="iw_content">' + address1 + '<br />' +
+         address2 + '<br />' +
+         postalCode + '</div></div>';
+
+      // including content to the Info Window.
+      infoWindow.setContent(iwContent);
+
+      // opening the Info Window in the current map and at the current marker location.
+      infoWindow.open(map, marker);
+   });
+}
+
+</script>
+</html>

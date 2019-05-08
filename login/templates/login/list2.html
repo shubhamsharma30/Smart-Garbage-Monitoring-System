@@ -1,0 +1,30 @@
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Drivers </title>
+</head>
+<body>
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<h1>List of Drivers </h1>
+
+{% for driver in alldrivers %}
+
+<a href="{{driver.id}}"><span> {{driver.id}}.</span> {{ driver.Name }} - {{driver.Username}} </a>
+
+<br><br>
+{% endfor %}
+</table>
+
+</body>
+</html>
+
+

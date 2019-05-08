@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Clients </title>
+</head>
+<body>
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<h1>List of all registered Clients </h1>
+
+{% for customer in allcustomers %}
+
+<a href="{{customer.id}}"><span>{{customer.id}}. </span>{{customer.C_Name}}</a>
+
+<br><br>
+{% endfor %}
+</table>
+
+</body>
+</html>
