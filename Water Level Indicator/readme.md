@@ -3,9 +3,13 @@
 Step 1: Components Required :
 	
 You will need the following materials for making your own Water Level Detector
+
 >Arduino Uno
+
 >Ultrasonic Sensor (HC-SR04)
+
 >Jumper wires
+
 >4 Digit seven segment display
 
 Step 2:  Connect Arduino Uno With HC-SR04 and 4 Digit Seven Segment Display : 
