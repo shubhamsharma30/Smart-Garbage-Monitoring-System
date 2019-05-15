@@ -16,7 +16,7 @@ Step 2:  Connect Arduino Uno With HC-SR04 and 4 Digit Seven Segment Display :
 
 	HC-SR04                 Arduino Uno
          
-	 GND	                 GND
+	   GND	                   GND
          
          ECHO                    D9
 
