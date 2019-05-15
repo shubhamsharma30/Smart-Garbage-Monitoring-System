@@ -13,6 +13,7 @@ You will need the following materials for making your own Water Level Detector
 >4 Digit seven segment display
 
 Step 2:  Connect Arduino Uno With HC-SR04 and 4 Digit Seven Segment Display : 
+
 	HC-SR04                 Arduino Uno
          
 	 GND	                 GND
@@ -46,8 +47,11 @@ In this project i have used arduino uno with ulrasonic sensor(to measure percent
 
 The ultrasonic sensor uses sonar to determine the distance to an object. Here’s what happens:
 1. The transmitter (trig pin) sends a signal: a high-frequency sound. 
+
 2. When the signal finds an object, it is reflected and… 
+
 3. … the transmitter (echo pin) receives it. 
+
 When ultrasonic sensor detect the level of water trig pin signal reflected back and echo pin of sensor recieves the signal. In my project, the hc-sr04 sensor detect the percentage of water filled in the tank, and show it on the 4 digit seven segment display.
 
 The percentage of water filled is shown by using formula:
