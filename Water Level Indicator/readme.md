@@ -1,4 +1,4 @@
-								﻿Water Level Detector Project
+					﻿Water Level Detector Project
 
 Step 1: Components Required :
 	
@@ -49,6 +49,8 @@ When ultrasonic sensor detect the level of water trig pin signal reflected back 
 The percentage of water filled is shown by using formula:
                           ((total height of tank-distance of water from sensor)/total   
                                                                                   height of tank)*100
+										  
+										  
  For code and formulas that i used in this project, you can see it in my sketch as mentioned in step3.
 
 
