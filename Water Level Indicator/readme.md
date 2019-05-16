@@ -38,8 +38,7 @@ Step 2:  Connect Arduino Uno With HC-SR04 and 4 Digit Seven Segment Display :
 
 Step 3: Upload Sktetch in ArduinoIDE :
  
-You can Download it form here: https://github.com/shubham1008042/Seth/tree/master/Water%20Level%20Indicator
-
+You can Download it form here: https://github.com/shubham1008042/Seth/tree/master/Water%20Level%20Indicator/task_water
 
 Step 4: Working Of The Project:
 
