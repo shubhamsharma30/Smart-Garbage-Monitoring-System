@@ -9,6 +9,7 @@ from .forms import C_Form,T_Form
 #from django.utils import timezone
 from .models import D_Details,C_Details,Trashcan1
 from django.contrib import messages
+from django.contrib.auth.models import User
 
 '''registration and login view of contractor'''
 def Contractor(request):
@@ -74,7 +75,7 @@ def contractor_login(request):
             print("They used username: {} and password: {}".format(username,password))
             return HttpResponse("Invalid login details given")
     else:
-        return render(request, 'login/log.html', {})
+        return render(request, 'login/log.html')
 
 
 '''registartion of contractor driver and trashcan'''
@@ -83,7 +84,7 @@ def Customer(request):
         form1 = C_Form(request.POST)
         if form1.is_valid():
             user1 = form1.save()
-           # user1.set_password(user1.C_password)
+            user1.set_password(user1.C_password)
             user1.save()
             return HttpResponseRedirect(reverse('special'))
             #print("Valid")
@@ -108,10 +109,9 @@ def Driver(request):
             driver.user = user
             driver.save()
             registered=True
-            return HttpResponseRedirect(reverse('index'))
+            return HttpResponseRedirect(reverse('special'))
         else:
-             return HttpResponse("dfghjklkjhgvghj")
-
+             return HttpResponse("The user already exists")
     else:
         user_from = UserForm()
         driver_form=D_Form()
@@ -141,11 +141,10 @@ def Trashcan(request):
     if request.method == 'POST':
         form3 = T_Form(request.POST)
         if form3.is_valid():
-            print("Valid")
-            messages.success(request, "Recorded Successfully !!")
             form3.save()
+            return HttpResponseRedirect(reverse('special'))
         else:
-            print("InVALID")
+            return HttpResponse(" Zindagi Zhnd hai ")
 
     form3 = T_Form()
     return render(request, 'login/form.html', {'form3': form3})
@@ -155,11 +154,15 @@ def index(request):
     return render(request,'login/index.html')
 
 def map(request):
-    return render(request,'login/form.html')
+    User= User.objects.all()
+    context = {'User':  User}
+    return render(request,'login/form.html',context)
 
 @login_required
 def special(request):
-    return render(request,'login/Map.html')
+#     User = User.objects.all()
+#     context = {'User':User}
+     return render(request,'login/Map.html')
 
 
 @login_required
@@ -175,9 +178,7 @@ def Ubidots(request):
 def Multi_map(request):
     trash = Trashcan1.objects.all()
     context = {'trash': trash}
-    #return HttpResponseRedirect(reverse('special'))
     return render(request,'login/Multi_map.html',context)
-
 
 def Customer_list(request):
     allcustomers = C_Details.objects.all()
@@ -206,8 +207,8 @@ def Trashcan_list(request):
     return render(request,'login/list3.html',context)
 
 def Trashcan_Detail(request,id=None):
+    # customer = C_Details.objects.all()
     trash=get_object_or_404(Trashcan1,id=id)
-    context= {'trash':trash}
+    context= {'trash':trash,'customer':customer}
     return render(request,'login/T_Details.html',context)
-
 
