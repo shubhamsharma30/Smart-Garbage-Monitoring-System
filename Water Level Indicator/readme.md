@@ -16,7 +16,7 @@ Step 2:  Connect Arduino Uno With HC-SR04 and 4 Digit Seven Segment Display :
 
 	HC-SR04                 Arduino Uno
          
-	   GND	                   GND
+	 GND	                 GND
          
          ECHO                    D9
 
@@ -52,6 +52,7 @@ The ultrasonic sensor uses sonar to determine the distance to an object. Here’
 3. … the transmitter (echo pin) receives it. 
 
 When ultrasonic sensor detect the level of water trig pin signal reflected back and echo pin of sensor recieves the signal. In my project, the hc-sr04 sensor detect the percentage of water filled in the tank, and show it on the 4 digit seven segment display.
+I have taken the  height of tank as 12cm and alsoit is static(constant) and given gap of 2 cm that the flow of water doesn't touch to the sensor that i used(HC-SR04).
 
 The percentage of water filled is shown by using formula:
                           ((total height of tank-distance of water from sensor)/total   
