@@ -1,7 +1,7 @@
 {% extends 'login/page.html' %}
 {% block body_block %}
-  <div class="container">
-    <div class="jumbotron">
+  <div class="container-fluid">
+    <!--<div class="jumbotron">-->
 
 	<title>design</title
 
@@ -9,48 +9,61 @@
 <style>
 *{
 	box-sizing: border-box;
+}
+
+.container-fluid{
+  background: url("/static/images/68.jpg") 50% 0 no-repeat fixed;
+     color: black;
+     <!--width:100%;-->
+     height: 700px;
+     padding:50px;
+}
+.jumbotron {
+  position:relative;
+  overflow:hidden;
+  background:cover;
+}
+
+.jumbotron .container {
+  position:relative;
+  z-index:2;
+  background:rgba(0,0,0,0.2);
+  padding:2rem;
+  border:1px solid rgba(0,0,0,0.1);
+  border-radius:3px;
+   background:#66CC66;
+}
+.jumbotron-background {
+  object-fit:cover;
+  font-family: 'object-fit: cover;';
+  position:absolute;
+  top:0;
+  margin-left:-4.5vw;
+  z-index:1;
+  width:100%;
+  height:100%;
+  opacity:0.5;
+   background:#DCF1DA;
 
 }
 
-	.welcome {
-		width:80 %;
-		background: lightgrey;
-		padding: 10px;
-		content: inline;
-		color:brown;
-	}
-	
-
-.client {
- width: 24%;
-  float: left;
-  padding: 5px; 
-margin-top: 20px;
-  
+.success {
+  border-color: #4CAF50;
+  color: green;
+  width:15vw;
 }
 
-.driver {
-   width: 24%;
-  float: left;
-  padding: 5px;
-margin-left:5px;
- margin-top: 20px;
+.success:hover {
+  background-color: #4CAF50;
+  color: white;
 }
 
-.bins {
-   width: 24%;
-  float: left;
-  padding: 5px;
-margin-left:5px;
-  margin-top: 20px;
-}
 
-.see_all {
- width: 24%;
-  float: left;
-  padding: 5px;
-margin-left:5px;
-  margin-top: 20px;
+img.blur {
+	-webkit-filter: blur(4px);
+	filter: blur(4px);
+  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='4');
+
 }
 
 .footer {
@@ -60,22 +73,6 @@ margin-top:20px;
 hr{
 clear:both;
 }
-.big-btn {
-  display: inline-block;
-  text-decoration: none;
-  min-width: 290px;
-  background: #444;
-  color:#fff;
-  padding: 5px 15px 10px;
-  text-align: center;
-  border-radius: 40px;
-  font-size: 30px;
-  font-family: GoldenSans-Bold;
-  border:2px solid transparent;
-  transition: 0.3s ease;
-  margin: auto;
-}
-.big-btn:hover {text-decoration: none;border-color:#53B848;background: #fff;color: #53B848}
 
 @media screen and (max-width: 600px){
 	body{
@@ -87,42 +84,51 @@ clear:both;
 </style>
 
 <div>
-	<div class="welcome">
-	<h1> Welcome Contractor</h1>
-		<p>Now u can add,remove drivers, clients and bins.<br>Hope you are doing well  </p>
-
-<button	type="button">Click Here</button >
-	</div> 
+	<div class="jumbotron jumbotron-fluid bg-dark">
+		<div class="jumbotron-background"><img src="static/images/garbage.png" class="blur "></div>
+		<div class="container">
+		<h1><center><b> Welcome Contractor {{ User.user}} </b></center></h1><br>
+		<h4><p>Now u can add,remove drivers, clients and bins. Hope you are doing well.<br>
+			Responsible management of waste is an essential aspect of sustainable building.
+			In this context, managing waste means eliminating waste where possible; minimizing waste where feasible; and reusing materials which might otherwise become waste.
+			Solid waste management practices have identified the reduction, recycling, and reuse of wastes as essential for sustainable management of resources.
+		</p> </h4>
+		</div>
+<!--<button	type="button">Click Here</button >-->
+	</div>
 
 <div>
-<div class="client">
-<form method="GET" action="{% url 'Driver' %}">
-	<button	type="submit">Register Drivers</button>
+	<div class="row thm">
+	<div class="client col-sm-3 text-center">
+		<form method="GET" action="{% url 'Driver' %}">
+	<button class="btn success">Register Drivers</button>
 </form>
 </div>
 
-<div class="driver">
+<div class="driver col-sm-3 text-center">
 	<form method="GET" action="{% url 'Customer' %}">
-    <button type="submit">Register Customers</button>
+    <button class="btn success">Register Customers</button>
 </form>
 
 </div>
 
-<div class="bins">
+<div class="bins col-sm-3 text-center">
 <form method="GET" action="{% url 'Trashcan' %}">
-    <button type="submit">Register Bins</button>
+    <button class="btn success">Register Bins</button>
 </form>
 </div>
 
-<div class="see_all">
+<div class="see_all col-sm-3 text-center">
 	<form method="GET" action="{% url 'Map' %}">
-		<button type="submit">See All</button>
+		<button class="btn success">See All</button>
 	</form>
 </div>
+	</div>
 <div class="footer">
-<hr
+<hr>
 <p>&copy 2019 Zapbuild Technologies Pvt. Ltd. All Rights Reserved</p>
 </div>
 </div>
 </div>
+  </div>
 		{% endblock %}
