@@ -17,4 +17,9 @@ Wi-Fi shield                  - Node MCU
 
 Microcontroller               - Arduino UNO             
 
-Connecting wires              - Jumper wires          
+Connecting wires              - Jumper wires         
+
+
+Step 2 : Upload Sketch:
+
+You can see it on given link:
