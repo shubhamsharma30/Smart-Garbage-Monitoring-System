@@ -22,4 +22,4 @@ Connecting wires              - Jumper wires
 
 Step 2 : Upload Sketch:
 
-You can see it on given link:
+You can get it here:https://github.com/shubham1008042/Smart-Garbage-Monitoring-System/blob/master/ultra_esp/ultra_esp.ino
