@@ -23,3 +23,13 @@ Connecting wires              - Jumper wires
 Step 2 : Upload Sketch:
 
 You can get it here:https://github.com/shubham1008042/Smart-Garbage-Monitoring-System/blob/master/ultra_esp/ultra_esp.ino
+
+
+Step 3 : Working of the Project:
+
+
+An ultrasonic sensor will be placed on the interior side of the lid, the one facing the solid waste. As trash increases, the distance between the ultrasonic and the trash decreases. This live data will be sent to our micro- controller.
+
+Micro- controller then processes the data and sends to ubidots(cloud) with the help of Wi-Fi module(Node MCU).
+
+Also there is web application for monitoring sensor or control electrical devices via local Wi-Fi or Internet and Control internet of things server - ubidots data monitor.
