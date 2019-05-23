@@ -10,12 +10,12 @@ You will need the following materials for making your own Water Level Detector
 
 HARDWARE REQUIRED:
 
-Components                    Models             Quantity
+Components                     Models               Quantity
 
-Ultrasonic Sensor             HC-SR04               1
+Ultrasonic Sensor              HC-SR04                 1
 
-Wi-Fi shield                  Node MCU              1
+Wi-Fi shield                   Node MCU                1
 
-Microcontroller               Arduino UNO           1
+Microcontroller                Arduino UNO             1
 
-Connecting wires              Jumper wires          10 - 15
+Connecting wires               Jumper wires           10 - 15
