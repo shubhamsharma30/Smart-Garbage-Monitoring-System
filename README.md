@@ -33,3 +33,5 @@ An ultrasonic sensor will be placed on the interior side of the lid, the one fac
 Micro- controller then processes the data and sends to ubidots(cloud) with the help of Wi-Fi module(Node MCU).
 
 Also there is web application for monitoring sensor or control electrical devices via local Wi-Fi or Internet and Control internet of things server - ubidots data monitor.
+
+Web application is in python and will be uploaded soon.
